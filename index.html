@@ -3,49 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/eGENCY.png" />
     <title>Agency Landing Page</title>
     <link rel="stylesheet" href="output.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
     <div class="absolute w-full h-screen bg-blue -z-10"></div>
-    <section class="flex flex-col h-screen container">
-      <div class="flex items-center justify-between">
-        <span class="font-muliBold text-2xl">eGENCY</span>
-        <nav>
-          <a href="#" class="mx-6 text-secondary">About</a>
-          <a href="#" class="mx-6">Products</a>
-          <a href="#" class="mx-6">Contacts</a>
-          <a href="#" class="mx-6">Help</a>
-        </nav>
-        <div>
-          <a href="#" class="mx-6 text-secondary font-bold">Sign In</a>
-          <a
-            href="#"
-            class="mx-6 bg-primary px-8 py-3 rounded-lg text-white font-bold"
-            >Sign Up</a
-          >
-        </div>
+    <!-- navigation header -->
+
+    <div
+      class="fixed flex items-center justify-evenly w-full py-8 bg-blue z-10"
+    >
+      <!-- <span class="font-muliBold text-2xl">eGENCY</span> -->
+      <img src="assets/images/eGENCY.png" alt="logo" width="100px" />
+      <nav class="hidden lg:block">
+        <a href="#" class="mx-6 text-secondary">About</a>
+        <a href="#" class="mx-6">Products</a>
+        <a href="#" class="mx-6">Contacts</a>
+        <a href="#" class="mx-6">Help</a>
+      </nav>
+      <div class="hidden lg:block">
+        <a href="#" class="mx-6 text-secondary font-bold">Sign In</a>
+        <a
+          href="#"
+          class="mx-6 bg-primary px-8 py-3 rounded-lg text-white font-bold"
+          >Sign Up</a
+        >
       </div>
-      <div class="flex items-center justify-between flex-grow">
+      <button id="toggle_nav" class="lg:hidden">toggle nav</button>
+    </div>
+    <!-- navigation sidebar -->
+    <div
+      id="sidebar"
+      class="fixed z-20 h-screen bg-gray-800 text-white w-64 transform transition-transform duration-300 ease-in-out -translate-x-full"
+    >
+      <!-- Logo -->
+      <div class="p-4">
+        <h1 class="text-xl font-bold">Logo</h1>
+      </div>
+      <!-- Navigation Links -->
+      <nav class="flex flex-col">
+        <a href="#" class="p-4 hover:bg-gray-700">Home</a>
+        <a href="#" class="p-4 hover:bg-gray-700">About</a>
+        <a href="#" class="p-4 hover:bg-gray-700">Services</a>
+        <a href="#" class="p-4 hover:bg-gray-700">Contact</a>
+      </nav>
+    </div>
+    <!-- home section -->
+    <section class="flex flex-col h-screen container">
+      <div
+        class="flex flex-col lg:flex-row items-center justify-evenly flex-grow"
+      >
         <img
           src="./assets/images/Saly-3.png"
           alt="hero-img"
-          class="self-end -ml-36"
-          width="700px"
+          class="lg:self-end -ml-36"
         />
         <div class="max-w-xl">
-          <h1 class="font-bold text-6xl my-20 text-dark-grey">
+          <h1
+            class="font-bold text-3xl lg:text-6xl my-5 lg:my-20 text-dark-grey"
+          >
             We scratch, build <br />
             and play together
           </h1>
-          <p class="my-20 text-dark-grey opacity-75">
+          <p class="my-5 lg:my-20 text-dark-grey opacity-75">
             Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam
             no suscipit quaerendum. At nam minimum ponderum. Est audiam animal
             molestiae te. Ex duo eripuit mentitum.
           </p>
           <a
-            class="py-3 px-8 border border-watermelon text-watermelon rounded-md hover:bg-watermelon hover:text-white"
+            class="py-3 px-8 border border-watermelon text-watermelon rounded-lg hover:bg-watermelon hover:text-white"
             href="#"
             >Contact Us</a
           >
@@ -56,9 +84,14 @@
       src="./assets/images/doodle-3 1.png"
       alt="doodle-3"
       width="150px"
-      class="absolute"
+      class="absolute -z-10 hidden lg:block"
     />
-    <section class="container flex items-center justify-between h-3xl">
+    <!-- about section -->
+    <section
+      class="container flex flex-col lg:flex-row-reverse items-center justify-evenly h-5xl lg:h-3xl"
+    >
+      <img src="./assets/images/1 1.png" alt="1 1.png" class="-mt-32" />
+
       <div>
         <p class="card bg-purple text-white">
           Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam
@@ -76,21 +109,17 @@
           eleifend antiopam ad, nam no suscipit quaerendum.
         </p>
       </div>
-      <img
-        src="./assets/images/1 1.png"
-        alt="1 1.png"
-        width="600px"
-        class="-mt-32"
-      />
     </section>
-    <div class="bg-yellow h-96 w-full absolute -z-10"></div>
+    <div class="bg-yellow h-xl lg:h-96 w-full absolute -z-10"></div>
     <img
       src="./assets/images/doodle-4 1.png"
       alt="doodle-4"
       width="100px"
       class="absolute"
     />
-    <section class="container h-96 flex items-center justify-between">
+    <section
+      class="container py-6 h-xl lg:h-96 flex flex-col lg:flex-row items-center justify-between"
+    >
       <h1 class="text_big text-dark-grey max-w-xl">
         Simplify your online shipping for free this month!
       </h1>
@@ -150,9 +179,11 @@
       src="assets/images/doodle-2 1.png"
       alt="doodle-2 1"
       width="150px"
-      class="absolute right-36"
+      class="absolute right-36 hidden lg:block"
     />
-    <section class="container h-2xl flex items-center justify-evenly">
+    <section
+      class="container h-4xl lg:h-2xl flex flex-col lg:flex-row items-center justify-evenly"
+    >
       <img src="assets/images/Saly-22.png" alt="Saly-22" width="500px" />
       <div>
         <h3 class="text-3xl font-semibold text-dark-grey">
@@ -170,20 +201,22 @@
       </div>
     </section>
     <section class="container h-2xl flex items-center justify-evenly">
-      <div class="absolute w-full h-96 bg-green opacity-50 -z-10"></div>
+      <div class="absolute w-full h-xl lg:h-96 bg-green opacity-50 -z-10"></div>
       <div>
         <h3 class="text-4xl font-semibold opacity-75 leading-relaxed">
           Grow your business with better <br />
           Shipping organizations
         </h3>
-        <div class="mt-8">
+        <div class="mt-8 flex flex-col lg:flex-row">
           <input
             type="text"
             placeholder="write your mail address"
             class="h-12 w-72 rounded-xl pl-4 focus:outline-none text-light-grey"
           />
 
-          <a href="#" class="px-6 py-4 bg-watermelon rounded-xl text-white ml-5"
+          <a
+            href="#"
+            class="px-6 py-4 bg-watermelon rounded-xl text-white lg:ml-5 w-fit"
             >Subscribe</a
           >
         </div>
@@ -192,8 +225,188 @@
         src="assets/images/Saly-6.png"
         alt="Saly-6"
         width="700px"
-        class="-mt-16"
+        class="-mt-16 hidden lg:block"
       />
     </section>
+    <section class="container h-2xl flex flex-col">
+      <div class="flex items-center justify-between">
+        <h3 class="text_big">
+          The best design for your <br />
+          studio website
+        </h3>
+        <a href="#" class="text-light-grey text-lg">Experienced team</a>
+      </div>
+      <div class="flex-grow flex items-center justify-evenly">
+        <div
+          class="w-80 h-96 flex flex-col justify-between rounded-lg shadow-2xl"
+        >
+          <div class="p-8">
+            <h2 class="text-4xl">Audit</h2>
+            <p class="mt-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
+              volutpat, viverra magna risus aliquam massa. Ac aliquam ac
+              volutpat, viverra magna risus.
+            </p>
+          </div>
+          <div class="w-full py-6 bg-yellow pl-8 rounded-br-lg rounded-bl-lg">
+            Experienced team
+          </div>
+        </div>
+        <div
+          class="w-80 h-96 flex flex-col justify-between rounded-lg shadow-2xl"
+        >
+          <div class="p-8">
+            <h2 class="text-4xl">Teamwork</h2>
+            <p class="mt-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
+              volutpat, viverra magna risus aliquam massa. Ac aliquam ac
+              volutpat, viverra magna risus.
+            </p>
+          </div>
+          <div class="w-full py-6 bg-green pl-8 rounded-br-lg rounded-bl-lg">
+            Experienced team
+          </div>
+        </div>
+        <div
+          class="w-80 h-96 flex flex-col justify-between rounded-lg shadow-2xl"
+        >
+          <div class="p-8">
+            <h2 class="text-4xl">Create</h2>
+            <p class="mt-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
+              volutpat, viverra magna risus aliquam massa. Ac aliquam ac
+              volutpat, viverra magna risus.
+            </p>
+          </div>
+          <div
+            class="w-full py-6 bg-watermelon pl-8 rounded-br-lg rounded-bl-lg"
+          >
+            Experienced team
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bg-yellow absolute w-full h-xl -z-10"></div>
+    <section class="container h-xl flex flex-col">
+      <div class="flex items-start justify-between mt-10">
+        <div class="max-w-xl">
+          <img src="assets/images/eGENCY.png" alt="logo" width="100px" />
+          <p class="mt-10">
+            Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam
+            no suscipit quaerendum. At nam minimum ponderum. Est audiam animal
+            molestiae te. Ex duo eripuit mentitum. Et has minim elitr
+            intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit
+            quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.
+            Ex duo eripuit mentitum.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-light-grey">Pages</h3>
+          <div class="mt-10">
+            <a href="#" class="text-sm text-dark-grey block">Tamplate</a>
+            <a href="#" class="text-sm text-dark-grey block">Price</a>
+            <a href="#" class="text-sm text-dark-grey block">Help</a>
+            <a href="#" class="text-sm text-dark-grey block">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-light-grey">Demos</h3>
+          <div class="mt-10">
+            <a href="#" class="text-sm text-dark-grey block">Dark Theme</a>
+            <a href="#" class="text-sm text-dark-grey block">Light Theme</a>
+            <a href="#" class="text-sm text-dark-grey block">Classic Theme</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-light-grey">Resources</h3>
+          <div class="mt-10">
+            <a href="#" class="text-sm text-dark-grey block">Documentation</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="w-fit ml-auto">
+          <a href="#" class="mx-3">New York</a>
+          <a href="#" class="mx-3">Dubai</a>
+          <a href="#" class="mx-3">Dhaka</a>
+          <a href="#" class="mx-3">Mumbai</a>
+          <a href="#" class="mx-3">Sidney</a>
+        </div>
+      </div>
+      <div style="height: 1px" class="w-full bg-black my-4"></div>
+      <div class="my-8">
+        <div class="w-fit m-auto">
+          <a href="#">
+            <img
+              src="assets/images/bank Icon/visa.png"
+              alt="visa"
+              class="inline"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="assets/images/bank Icon/american express.png"
+              alt="american"
+              class="inline"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="assets/images/bank Icon/paypal.png"
+              alt="paypal"
+              class="inline"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="assets/images/bank Icon/master-card.png"
+              alt="master-card"
+              class="inline"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="assets/images/bank Icon/stripe.png"
+              alt="stripe"
+              class="inline"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="assets/images/bank Icon/bitcoin.png"
+              alt="bitcoin"
+              class="inline"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="assets/images/bank Icon/bancontact.png"
+              alt="bancontact"
+              class="inline"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="mt-10">
+        <div class="w-fit mr-auto">
+          <h3 class="text-light-grey">&copy; 2019-2020 All Rights Reserved.</h3>
+        </div>
+        <div class="w-fit ml-auto">
+          <a href="#" class="text-light-grey">Terms of Service</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document
+        .getElementById("toggle_nav")
+        .addEventListener("click", function () {
+          document
+            .querySelector("#sidebar")
+            .classList.toggle("-translate-x-full");
+        });
+    </script>
   </body>
 </html>
+
+<!-- 377 398 -->
